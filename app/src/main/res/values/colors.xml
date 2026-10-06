@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- 国民党主题色 -->
+    <color name="kmt_blue">#0000CD</color>
+    <color name="kmt_white">#FFFFFF</color>
+    <color name="kmt_light_blue">#1E90FF</color>
+    <color name="kmt_sky_blue">#87CEEB</color>
+    <color name="kmt_dark_blue">#00008B</color>
+    <color name="kmt_text_dark">#333333</color>
+</resources>

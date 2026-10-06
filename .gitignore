@@ -1,0 +1,36 @@
+# Gradle
+.gradle/
+build/
+!gradle/wrapper/gradle-wrapper.jar
+!gradle/wrapper/gradle-wrapper.properties
+
+# Android Studio
+.idea/
+*.iml
+.DS_Store
+local.properties
+
+# 构建输出
+*.apk
+*.ap_
+*.dex
+*.class
+
+# 日志文件
+*.log
+
+# 签名文件 (不要提交到 GitHub!)
+*.jks
+*.keystore
+key.properties
+keystore.properties
+
+# 本地配置
+local.properties
+
+# NDK
+obj/
+
+# Misc
+.externalNativeBuild
+.cxx

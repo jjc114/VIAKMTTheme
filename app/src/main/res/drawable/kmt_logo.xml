@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="48dp"
+    android:height="48dp"
+    android:viewportWidth="48"
+    android:viewportHeight="48">
+    
+    <!-- 蓝底 -->
+    <path
+        android:fillColor="#0000CD"
+        android:pathData="M0,0h48v48h-48z" />
+    
+    <!-- 白日 十二芒光 -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M24,12L26,18L32,18L27,22L29,28L24,24L19,28L21,22L16,18L22,18Z" />
+</vector>

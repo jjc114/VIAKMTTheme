@@ -1,0 +1,77 @@
+name: 构建 VIA 国民党主题 LSPosed 模块
+
+on:
+  push:
+    branches: [ main, master ]
+    tags:
+      - 'v*'
+  pull_request:
+    branches: [ main, master ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: 检出代码
+      uses: actions/checkout@v4
+      
+    - name: 设置 JDK 17
+      uses: actions/setup-java@v4
+      with:
+        java-version: '17'
+        distribution: 'temurin'
+        cache: gradle
+        
+    - name: 授予 Gradle 执行权限
+      run: chmod +x gradlew
+      
+    - name: 构建 Release APK
+      run: ./gradlew assembleRelease
+      
+    - name: 签名 APK (可选)
+      if: false  # 如需签名请设置为 true 并配置密钥
+      run: |
+        echo "TODO: 配置签名密钥"
+        # jarsigner -verbose -sigalg SHA256withRSA -digestalg SHA-256 \
+        #   -keystore ${{ secrets.KEYSTORE_FILE }} \
+        #   -storepass ${{ secrets.KEYSTORE_PASSWORD }} \
+        #   app/build/outputs/apk/release/app-release-unsigned.apk \
+        #   alias_name
+      
+    - name: 上传 APK 构建产物
+      uses: actions/upload-artifact@v4
+      with:
+        name: VIA-KMT-Theme-LSPosed
+        path: app/build/outputs/apk/release/app-release.apk
+        
+    - name: 创建 Release (仅标签触发)
+      if: startsWith(github.ref, 'refs/tags/')
+      uses: softprops/action-gh-release@v1
+      with:
+        files: app/build/outputs/apk/release/app-release.apk
+        body: |
+          ## VIA 浏览器国民党主题 LSPosed 模块
+          
+          ### 安装说明
+          1. 下载 `app-release.apk` 
+          2. 安装到已 Root 的 Android 设备
+          3. 在 LSPosed 管理器中启用模块
+          4. 勾选 "VIA 浏览器" (mark.via.gp) 作用域
+          5. 重启 VIA 浏览器查看效果
+          
+          ### 主题特性
+          - 🔵 国民党蓝色主题 (#0000CD)
+          - ⚪ 白蓝配色方案
+          - 📱 状态栏/导航栏自动着色
+          - 🎨 工具栏/地址栏主题化
+          - ⚡ 进度条天蓝色
+          
+          ### 系统要求
+          - Android 7.0+ (API 24+)
+          - 已 Root
+          - LSPosed 或 EdXposed 框架
+          - VIA 浏览器 7.3.4
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

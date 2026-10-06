@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+    
+    <application
+        android:label="VIA 国民党主题"
+        android:icon="@drawable/kmt_logo"
+        android:allowBackup="false">
+        
+        <!-- LSPosed/EdXposed Module 元数据 -->
+        <meta-data
+            android:name="xposedmodule"
+            android:value="true" />
+        
+        <meta-data
+            android:name="xposeddescription"
+            android:value="为 VIA 浏览器 7.3.4 应用国民党蒋介石主题 - 白蓝配色\n需要 LSPosed 或 EdXposed 框架" />
+        
+        <meta-data
+            android:name="xposedminversion"
+            android:value="93" />
+        
+        <!-- LSPosed 作用域配置 -->
+        <meta-data
+            android:name="xposedscope"
+            android:resource="@array/xposed_scope" />
+        
+        <!-- 模块设置入口(可选) -->
+        <activity
+            android:name=".SettingsActivity"
+            android:label="VIA 国民党主题设置"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="de.robv.android.xposed.category.MODULE_SETTINGS" />
+            </intent-filter>
+        </activity>
+    </application>
+    
+</manifest>
