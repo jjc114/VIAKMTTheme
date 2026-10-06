@@ -41,7 +41,7 @@ git commit -m "初始提交: VIA 国民党主题 LSPosed 模块"
 git branch -M main
 
 # 关联远程仓库 (替换成你的 GitHub 用户名)
-git remote add origin https://github.com/你的用户名/VIAKMTTheme.git
+git remote add origin https://github.com/jjc114/VIAKMTTheme.git
 
 # 推送到 GitHub
 git push -u origin main
