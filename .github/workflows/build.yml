@@ -36,24 +36,24 @@ jobs:
     - name: 授予 Gradle 执行权限
       run: chmod +x gradlew
       
-    - name: 构建 Release APK
+- name: 构建 Release APK
       run: ./gradlew assembleRelease --no-daemon --warning-mode all
       
-    - name: 签名 APK (可选)
-      if: false  # 如需签名请设置为 true 并配置密钥
+    - name: 列出构建输出文件
       run: |
-        echo "TODO: 配置签名密钥"
-        # jarsigner -verbose -sigalg SHA256withRSA -digestalg SHA-256 \
-        #   -keystore ${{ secrets.KEYSTORE_FILE }} \
-        #   -storepass ${{ secrets.KEYSTORE_PASSWORD }} \
-        #   app/build/outputs/apk/release/app-release-unsigned.apk \
-        #   alias_name
+        echo "=== 查找所有 APK 文件 ==="
+        find . -name "*.apk" -type f
+        echo "=== app/build 目录结构 ==="
+        ls -lR app/build/outputs/ || echo "outputs 目录不存在"
       
     - name: 上传 APK 构建产物
       uses: actions/upload-artifact@v4
       with:
         name: VIA-KMT-Theme-LSPosed
-        path: app/build/outputs/apk/release/app-release.apk
+        path: |
+          app/build/outputs/apk/**/*.apk
+          **/build/outputs/apk/**/*.apk
+        if-no-files-found: warn
         
     - name: 创建 Release (仅标签触发)
       if: startsWith(github.ref, 'refs/tags/')
