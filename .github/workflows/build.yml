@@ -25,7 +25,7 @@ jobs:
         cache: gradle
         
     - name: 初始化 Gradle Wrapper
-      run: gradle wrapper --gradle-version=8.0
+      run: gradle wrapper --gradle-version=7.5
       
     - name: 授予 Gradle 执行权限
       run: chmod +x gradlew
