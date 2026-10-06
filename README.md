@@ -58,7 +58,7 @@
 
 ```bash
 # 克隆仓库
-git clone https://github.com/你的用户名/VIAKMTTheme.git
+git clone https://github.com/jjc114/VIAKMTTheme.git
 cd VIAKMTTheme
 
 # 编译
