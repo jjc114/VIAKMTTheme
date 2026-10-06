@@ -8,14 +8,14 @@
 
 **通过 GitHub Actions 自动构建:**
 
-1. 前往 [Actions](https://github.com/你的用户名/VIAKMTTheme/actions) 页面
+1. 前往 [Actions](https://github.com/jjc114/VIAKMTTheme/actions) 页面
 2. 点击最新的成功构建
 3. 在 "Artifacts" 部分下载 `VIA-KMT-Theme-LSPosed`
 4. 解压 ZIP 文件获得 APK
 
 **或从 Releases 下载:**
 
-前往 [Releases](https://github.com/你的用户名/VIAKMTTheme/releases) 下载最新版本的 APK
+前往 [Releases](https://github.com/jjc114/VIAKMTTheme/releases) 下载最新版本的 APK
 
 ## ✨ 特性
 
