@@ -36,7 +36,7 @@ jobs:
     - name: 授予 Gradle 执行权限
       run: chmod +x gradlew
       
-- name: 构建 Release APK
+    - name: 构建 Release APK
       run: ./gradlew assembleRelease --no-daemon --warning-mode all
       
     - name: 列出构建输出文件
