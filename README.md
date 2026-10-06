@@ -47,7 +47,7 @@
 
 ### 方法一: 使用 GitHub Actions 构建的 APK
 
-1. 从 [Actions](https://github.com/你的用户名/VIAKMTTheme/actions) 或 [Releases](https://github.com/你的用户名/VIAKMTTheme/releases) 下载 APK
+1. 从 [Actions](https://github.com/jjc114/VIAKMTTheme/actions) 或 [Releases](https://github.com/jjc114/VIAKMTTheme/releases) 下载 APK
 2. 安装到手机
 3. 打开 LSPosed 管理器
 4. 在「模块」列表中找到「VIA 国民党主题」
@@ -128,7 +128,7 @@ git init
 git add .
 git commit -m "Initial commit: VIA 国民党主题 LSPosed 模块"
 git branch -M main
-git remote add origin https://github.com/你的用户名/VIAKMTTheme.git
+git remote add origin https://github.com/jjc114/VIAKMTTheme.git
 git push -u origin main
 
 # 3. GitHub Actions 会自动开始构建
