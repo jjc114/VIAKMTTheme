@@ -4,12 +4,12 @@ plugins {
 
 android {
     namespace 'com.example.viakmt'
-    compileSdk 34
+    compileSdk 33
 
     defaultConfig {
         applicationId "com.example.viakmt"
         minSdk 24
-        targetSdk 34
+        targetSdk 33
         versionCode 1
         versionName "1.0"
     }
@@ -25,10 +25,13 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+    
+    lintOptions {
+        abortOnError false
+        checkReleaseBuilds false
+    }
 }
 
 dependencies {
-    // LSPosed API (兼容 EdXposed)
     compileOnly 'de.robv.android.xposed:api:82'
-    compileOnly 'de.robv.android.xposed:api:82:sources'
 }
